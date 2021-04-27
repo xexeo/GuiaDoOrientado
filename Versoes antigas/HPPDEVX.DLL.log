@@ -1,0 +1,30 @@
+GetXmlFile.cpp: SetupLogging> ******** Start of Response from device ********
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<ProductInformation xmlns="http://www.hp.com/schemas/imaging/pls/dev/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.hp.com/schemas/imaging/pls/dev/1.0 ProductInformation.xsd">
+  	 <ProductName>HP LaserJet P2015 Series</ProductName>
+         <FormatterNumber>LM5009T</FormatterNumber>
+	 <PrinterNumber>CB364A</PrinterNumber> 
+	 <ProductSerialNumber>BRCS83V098</ProductSerialNumber>
+         <ServiceID>00000</ServiceID>
+         <DfaData>0</DfaData>
+	 <FirmwareDatecode>20070810</FirmwareDatecode>
+	 <MaxPrintResolution>0</MaxPrintResolution> 
+         
+         <ControllerNumber>8</ControllerNumber>
+         <DuplexInstalled>1</DuplexInstalled>
+         <PrintEnginePPM>27</PrintEnginePPM>
+         
+         
+         
+           <IPAddress>146.164.35.12</IPAddress>
+           <HardwareAddress>00:1f:29:b7:de:f6</HardwareAddress>
+
+         
+         
+
+
+</ProductInformation>
+
+GetXmlFile.cpp: SetupLogging> ******** End of Response from device ********
