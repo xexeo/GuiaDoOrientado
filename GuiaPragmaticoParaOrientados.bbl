@@ -1,0 +1,100 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{Pimentel2020}{incollection}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=09c3b156cf3743e02f0ef067a7cfe5c6}{%
+           family={Pimentel},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0898ccefaf8a3f4f4b3c40e1731871e7}{%
+           family={Filippo},
+           familyi={F\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f8febe71706aa09d552cc82af2ffb5b5}{%
+           family={Santoro},
+           familyi={S\bibinitperiod},
+           given={F.\bibnamedelimi M.},
+           giveni={F\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=baed6fe664f8412f75ecbf1507141792}{%
+           family={Jaques},
+           familyi={J\bibinitperiod},
+           given={Patrícia\bibnamedelima Augustin},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=906e9706cbbec55d0d3dcd76d68aad32}{%
+           family={Pimentel},
+           familyi={P\bibinitperiod},
+           given={Mariano},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fd51c45c9e253d10b41687d6dadc7b40}{%
+           family={Siqueira},
+           familyi={S\bibinitperiod}}}%
+        {{hash=40d18d5a7ae85f9597a40f1306041fd1}{%
+           family={Sean},
+           familyi={S\bibinitperiod}}}%
+        {{hash=cc8e18d16ab20a41ced7bf89374203ec}{%
+           family={Bittencourt},
+           familyi={B\bibinitperiod},
+           given={Ig},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SBC}%
+      }
+      \strng{namehash}{c5f0624240f9c0cf07e3624197cdfa5c}
+      \strng{fullhash}{c5f0624240f9c0cf07e3624197cdfa5c}
+      \strng{bibnamehash}{c5f0624240f9c0cf07e3624197cdfa5c}
+      \strng{authorbibnamehash}{c5f0624240f9c0cf07e3624197cdfa5c}
+      \strng{authornamehash}{c5f0624240f9c0cf07e3624197cdfa5c}
+      \strng{authorfullhash}{c5f0624240f9c0cf07e3624197cdfa5c}
+      \strng{editorbibnamehash}{429821220e564882d6c3fe8067a6cfaa}
+      \strng{editornamehash}{429821220e564882d6c3fe8067a6cfaa}
+      \strng{editorfullhash}{1c425ec329727965127c2edd1e779d4e}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Metodologia de Pesquisa Científica em Informática na Educação: Concepção de Pesquisa}
+      \field{series}{Série Metodologia de Pesquisa em Informática na Educação}
+      \field{title}{Design Science Research: fazendo pesquisas científicas rigorosas atreladas ao desenvolvimento de artefatos computacionais projetados para a educação.}
+      \field{volumes}{1}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://metodologia.ceie-br.org/livro-1
+      \endverb
+      \verb{url}
+      \verb https://metodologia.ceie-br.org/livro-1
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
