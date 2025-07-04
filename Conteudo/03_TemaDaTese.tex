@@ -98,8 +98,6 @@ Algumas teses atuais têm proposto lacunas no estado da arte, e a partir dessas 
 
 Entre meus alunos, o uso da \gxdefine{Design Science Research} (\gxdefine{DSR})\citep{Pimentel2020} também fornece caminhos para pensar sua tese . Eu estou me tornando cada vez mais um adepto dessa metodologia, dessa forma de fazer Ciência, que é realizada por meio de vários processos mais detalhados. Ou seja, não existe um método científico DSR, ele é mais uma filosofia de trabalho que fornece parâmetros para estabelecer um método específico.
 
-
-
 Outra técnica possível, é desenhar um \gxdefine{Project Model Canvas}\footnote{\url{http://www.projectmodelcanvas.com/}} . Essa é uma proposta de José Finocchio Júnior e tem uma representação visual interessante, apresentada na Figura \ref{fig:pmc}.
 
 % TODO: \usepackage{graphicx} required
@@ -111,7 +109,7 @@ Outra técnica possível, é desenhar um \gxdefine{Project Model Canvas}\footnot
 \end{figure}
 
 
-   \section{Como descrever o que é a tese}
+\section{Como descrever o que é a tese}
 
 Algumas coisas são importantes para você definir sua tese.
 
@@ -132,3 +130,70 @@ Por exemplo, é importante \textbf{definir o problema} que a tese trata. Esse pr
 Costumamos, reservar o termo \textbf{hipótese para conjecturas que podem ser provadas com experimentos} que incluem uma hipótese nula, por meios estatísticos, ou provada, ou negada, por meio de um teorema. Chamar de hipótese, no corpo da tese, algo que não pode ser comprovado dessa forma, cria uma expectativa errada no leitor. Caso não haja uma comprovação formal, devemos evitar o termo hipótese e usar outros como conjecturas ou questões de pesquisa.
 
 Podem ser necessárias também a elaboração de uma ou mais \textbf{premissas}, que são afirmações consideradas válidas a priori para sua tese. Premissas não são questionadas ao logo da tese, e sim assumidas como válidas. Claro que se espera que as premissas tenham alguma evidência, ou seja, não sejam facilmente falseáveis.
+
+\section{A Metodologia DSR Adotada por Mim}
+
+Design Science Research (DSR) é uma abordagem metodológica que visa a construção e avaliação de artefatos para resolver problemas complexos no contexto das ciências aplicadas, como a Engenharia de Software, Sistemas de Informação e Ciência da Computação em geral~\citep{hevner2004design}. 
+
+A DSR diferencia-se das abordagens tradicionais por focar não apenas na compreensão do fenômeno, mas na intervenção com base em um conhecimento científico rigoroso \cite{hevner2004design, peffers2007design}. Assim, ela busca contribuir tanto para a prática quanto para a teoria.
+
+A orientação atual ao adotar a DSR é modelar o trabalho com o método MODEL-DSR~\citep{pimentel2019dsr,pimentel2023} e produzir os artefatos segundo o \textit{Framework de Pesquisa em Tecnologia da Informação}~\citep{march1995design}.
+
+
+\subsection{Um Modelo de Pesquias em DSR - MODEL-DSR}
+
+O MODEL-DSR é uma proposta metodológica desenvolvida por Pimentel, Filippo e Santoro \cite{pimentel2019dsr,pimentel2023}, com o objetivo de orientar pesquisas em Informática na Educação a partir dos princípios da Design Science Research. 
+
+Segundo \citet{pimentel2023} ``O modelo consiste em um conjunto de elementos que precisam estar coerentemente inter-relacionados''. Dado um problema que existe dentro de um contexto, um artefato é construído direcionadas por conjecturas comportamentais. O artefato então permite a avaliação do problema em contexto e da conjectura (ver \autoref{fig:dsrmodel})
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/dsr pimental.png}
+    \caption{Elementos centrais do Model-DSR. Baseado em \citep{pimentel2023}}
+    \label{fig:dsrmodel}
+\end{figure}
+
+O modelo também propõe um artefato visual que explicita as conexões entre teoria, problema, solução e contexto. Esse artefato é adotado por nosso grupo para definir a pesquisa que está sendo feita. Exemplos foram dados por \citet{pimentel2019dsr} e \citet{pimentel2023}.
+
+Ao destacar a produção de conhecimento científico como elemento central da DSR, o MODEL-DSR contribui para diferenciar claramente pesquisa de desenvolvimento tecnológico. Ele é especialmente adequado a pesquisas aplicadas em educação mediada por tecnologia, promovendo o rigor metodológico e a relevância prática.
+
+\subsection{Framework de Pesquisa em Tecnologia da Informação}
+
+March e Smith \cite{march1995design} propuseram um framework bidimensional (ver \autoref{tab:marchsmith}) para pesquisas em Tecnologia da Informação que distingue entre tipos de artefatos produzidos e atividades de pesquisa realizadas. Os artefatos incluem:
+\begin{itemize}
+    \item \textbf{Construtos}: são os conceitos que formam a linguagem da área de estudo, usados para descrever problemas e formular soluções.
+    \item \textbf{Modelos}: expressam relações entre construtos e servem como representacões de situações-problema ou de soluções.
+    \item \textbf{Métodos}: são sequências de passos ou algoritmos utilizados para resolver tarefas específicas.
+    \item \textbf{Instâncias}: são realizações concretas de sistemas, ferramentas ou protótipos que demonstram o uso prático dos construtos, modelos e métodos.
+\end{itemize}
+
+As atividades de pesquisa compreendem:
+\begin{itemize}
+    \item \textbf{Construção (build)}: desenvolvimento dos artefatos para um objetivo específico, demonstrando sua viabilidade.
+    \item \textbf{Avaliação (evaluate)}: análise sistemática do desempenho dos artefatos em função de métricas e critérios estabelecidos.
+    \item \textbf{Teorização (theorize)}: construção de explicações que descrevem como e por que os artefatos funcionam em seu ambiente.
+    \item \textbf{Justificativa (justify)}: verificação empírica ou formal das teorias propostas, com base em evidências.
+\end{itemize}
+
+Esse framework contribui para organizar e avaliar as pesquisas em TI segundo seu tipo de contribuição, facilitando a compreensão e a comunicação dos resultados científicos.
+
+
+
+
+
+\begin{table}[hbt]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+       & Construção & Avaliação & Teorização & Justificativa  \\    \hline
+    Construtos &&&&\\     \hline
+    Modelo &&&&\\    \hline
+    Método &&&&\\    \hline
+    Instâncias &&&&\\    \hline
+    \end{tabular}
+    \caption{O \textit{Framework} de pesquisa em tecnologia da informação proposto por \citet{march1995design}}
+    \label{tab:marchsmith}
+\end{table}
+
+Além disso, Hevner et al. \cite{hevner2004design} destacam que a contribuição para o corpo de conhecimento científico é um critério essencial para a validade de uma pesquisa baseada em DSR.
+
