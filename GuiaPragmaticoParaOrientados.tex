@@ -15,7 +15,7 @@
 \SetWatermarkScale{5}
 
 
-\title{Guia Pragmático para a Pós-Graduação}
+\title{Guia Pragmático para Orientados}
 \subtitle{Dicas do campo de batalha para você que quer terminar o mestrado ou o doutorado}
 \author{Geraldo Xexéo}
 \date{\today~\currenttime}
@@ -63,31 +63,34 @@
 \include{Conteudo/13_MetodologiaCientifica}
 \include{Conteudo/15_ExameQualificacao}
 %\include{Conteudo/17_HardwareSoftware}
-\include{Conteudo/19_TextoDaTese}
 \part{Trabalhando Comigo}
 \include{Conteudo/25PraticasdaCoppe}
 \include{Conteudo/18_TrabalhandoComigo}
+\include{Conteudo/19_TextoDaTese}
 \part{Conclusão}
 \include{Conteudo/11_OtimoBom}
 \chapter{Bibliografia}
 \printbibliography[heading=none]  % Suprime o título automático
-%\printindex
+\stepcounter{chapter}
+\printindex
+\chapter{Lista de URLs citadas}
+  \immediate\closeout\urllistfile
+  \begin{itemize}
+  \input{urllist.aux}    
+  \end{itemize}
 \part{Apêndices}
 \renewcommand{\chapapp}{Apêndice}
 \renewcommand{\thechapter}{\Alph{chapter}}
 \setcounter{chapter}{0}
 \include{Conteudo/checklist defesa}
 \include{Conteudo/checklistsCOPPE}
-\chapter{Lista de URLs citadas}
-  \immediate\closeout\urllistfile
+  
 \part{Anexos}
 \renewcommand{\chapapp}{Anexo}
 \renewcommand{\thechapter}{\Alph{chapter}}
 \setcounter{chapter}{0}
 \include{Conteudo/23_Piadas}
 \include{Conteudo/24_MensagemGarcia}
-
-\listofurls
 
 
 

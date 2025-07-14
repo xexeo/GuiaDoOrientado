@@ -345,6 +345,7 @@ style=ext-authoryear-comp
 
 \let\oldurl\url
 \renewcommand{\url}[1]{\myurl{#1}}
+\newcommand{\expurl}[2]{\myeurl{#1}{#2}}
 
 \newcommand{\myurl}[1]{%
   \oldurl{#1}%
@@ -354,7 +355,16 @@ style=ext-authoryear-comp
   \endgroup
 }
 
+\newcommand{\myeurl}[2]{%
+  \oldurl{#1}%
+  \begingroup
+    \edef\tempurl{#1}%
+    \immediate\write\urllistfile{\noexpand\eurllistentry{\tempurl}{#2}}%
+  \endgroup
+}
+
 \newcommand{\urllistentry}[1]{\item \oldurl{#1}}
+\newcommand{\eurllistentry}[2]{\item \textbf{#2}: \oldurl{#1}}
 
 \newcommand{\listofurls}{%
   \immediate\closeout\urllistfile
