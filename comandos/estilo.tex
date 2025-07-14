@@ -1,0 +1,214 @@
+% Fonte do sistema (XeLaTeX ou LuaLaTeX obrigatório)
+\usepackage{fontspec}
+\setmainfont{Libertinus Serif} % texto com serifa
+\setsansfont{Fira Sans}        % fonte sem serifa para títulos
+% Títulos sem serifa
+% From site https://www.colorhexa.com/900121
+\definecolor{navyblue}{RGB}{0, 38, 77}
+\definecolor{lightblue}{RGB}{173, 216, 230}
+\definecolor{vinho2025}{RGB}{144,1,33}
+\definecolor{CoppeBox}{RGB}{138,24,32}
+
+%\definecolor{vinhosection}{RGB}{169,1,39}    
+\definecolor{vinhosection}{RGB}{195,1,45} % Tom mais claro
+\definecolor{vinhosubsection}{RGB}{220,2,50}
+% Reativa o formato padrão de capítulo com prefixo e número
+% \renewcommand*{\chapterformat}
+% {\ifnum\value{chapter}>0 %
+% \chapapp~\thechapter\autodot\enskip
+% \else
+% \fi%
+% }%
+
+% \renewcommand*{\chapterformat}{%
+%     \chapapp~\thechapter\autodot\enskip
+% }
+
+
+% % Redefine a aparência da linha de título do capítulo
+% \renewcommand*{\chapterlinesformat}[3]{%
+%   \vspace*{2ex}%
+%   \noindent
+%   \colorbox{vinho2025}{%
+%     \begin{minipage}[c][2cm][c]{\linewidth}
+%       \color{white}\bfseries
+%       \ifnum\value{chapter}>0
+%         \Large \chapterformat\par\vspace{0.3ex}
+%       \else
+%         \IfDecimal{\thechapter}{\thechapter}{%
+%         \Large \chapterformat\par\vspace{0.3ex}
+%         }%
+%       \fi
+%       \Huge #3
+%     \end{minipage}%
+%   }%
+%   \vspace{2ex}%
+% }
+
+
+\renewcommand*{\chapterformat}{%
+  \ifnum\value{chapter}>0
+    \chapapp~\thechapter\autodot\enskip
+  \fi
+}
+
+\renewcommand*{\chapterlinesformat}[3]{%
+  \typeout{Executando chapterlinesformat para #3}%
+  \vspace*{2ex}%
+  \noindent
+  \colorbox{vinho2025}{%
+    \begin{minipage}[c][2cm][c]{\linewidth}
+      \color{white}\bfseries
+      \ifnum\value{chapter}>0
+        \Large \chapterformat\par\vspace{0.3ex}
+      \fi
+      \Huge #3
+    \end{minipage}%
+  }%
+  \vspace{2ex}%
+}
+
+
+
+\usepackage{xstring} % Required for \ifstrequal
+
+\makeatletter
+
+\renewcommand*{\sectionlinesformat}[4]{%
+  \ifstrequal{#1}{section}{%
+    \leavevmode
+    \vspace{1.5ex}%
+    \noindent\colorbox{vinhosection}{%
+      \parbox[b][2ex][c]{\linewidth}{%
+        \hskip #2\relax
+        \color{white}\bfseries\large #3#4%
+      }%
+    }%
+   % \vspace{1.0ex}%
+  }{%
+    \ifstrequal{#1}{subsection}{%
+      \leavevmode
+      \vspace{1ex}%
+      \noindent\colorbox{vinhosubsection}{%
+        \parbox[b][1.5ex][c]{\linewidth}{%
+          \hskip #2\relax
+          \color{white}\bfseries\normalsize #3#4%
+        }%
+      }%
+  %    \vspace{0.5ex}%
+    }{%
+      \@hangfrom{\hskip #2#3}{#4}%
+    }%
+  }%
+}
+\makeatother
+
+
+\definecolor{atencao2025}{RGB}{1,33,144}
+
+% \newcommand{\gxatencao}[1]{
+%     \begin{tcolorbox}[notitle,boxrule=0mm,colframe=atencao2025,%
+% colback=atencao2025,fonttitle=\bfseries,arc=0mm]%
+% \centering
+% \color{white}{\large\textbf{\protect#1}}
+% \end{tcolorbox}}
+
+\newcommand{\gxatencao}[1]{%
+  \begin{center}
+  \begin{tcolorbox}[%
+    width=\dimexpr\linewidth-2cm\relax,
+    boxrule=0mm,
+    colframe=atencao2025,
+    colback=atencao2025,
+    fonttitle=\bfseries,
+    arc=0mm,
+    left=2mm, right=2mm, top=1mm, bottom=1mm,
+    enlarge left by=0mm, % no negative margin
+    enlarge right by=0mm,
+    box align=center
+  ]
+   \centering
+  \color{white}{\large\textbf{#1}}
+  \end{tcolorbox}
+  \end{center}
+}
+
+
+
+% KOMA
+\usepackage[automark]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+
+\clearpairofpagestyles  % remove estilos padrões
+
+\ihead{\leftmark}       % título do capítulo no canto esquerdo
+\ohead{\pagemark}       % número da página no canto direito
+\automark[section]{chapter} % mostra título de capítulo em \leftmark
+
+\renewcommand*{\chaptermarkformat}{} 
+
+\cfoot*{\pagemark}
+
+%https://tex.stackexchange.com/questions/449672/header-on-page-with-chapter-heading
+
+%  \lehead{lehead}
+%  \cehead{cehaed} \rehead{rehead} \lohead{lohead} \cohead{cohead} \rohead{roread} \lefoot{lefoot} \cefoot{cefoot} \refoot{refoot}
+% \lofoot{lofoot} \cofoot{cofoot} \rofoot{rofoot} \ihead{ihead} \chead{chead} \ohead{ohead} \ifoot{lfoot} \cfoot{cfoot}  \ofoot{ofoot}
+
+%  \lehead*{leheadStar}
+%  \cehead*{cehaedStar} \rehead*{reheadStar} \lohead*{loheadStar} \cohead*{coheadStar} \rohead*{roreadStar} \lefoot*{lefootStar} \cefoot*{cefootStar} \refoot*{refootStar}
+% \lofoot*{lofootStar} \cofoot*{cofootStar} \rofoot*{rofootStar} \ihead*{iheadStar} \chead*{cheadStar} \ohead*{oheadStar} \ifoot*{lfootStar} \cfoot*{cfootStar}  \ofoot*{ofootStar}
+
+%%%
+\usepackage{tikz}
+\usepackage{eso-pic}
+\newcommand{\AddPartBackground}{%
+  \AddToShipoutPictureBG*{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[vinho2025] (current page.south west) rectangle (current page.north east);
+    \end{tikzpicture}%
+  }%
+}
+\let\oldpart\part
+\renewcommand{\part}[1]{%
+  \cleardoublepage
+  \thispagestyle{empty}
+  \AddPartBackground
+  \color{white}
+  \vspace*{\fill}
+  \begin{center}
+    {\Huge\bfseries  \sffamily  #1\par}
+  \end{center}
+  \vspace*{\fill}
+  \clearpage
+  \normalcolor % volta à cor padrão
+}
+%%%
+
+
+\newtcolorbox{CoppeBox}[1][]{
+ % sharp corners=south,
+  colback=CoppeBox!5!white,
+  colframe=CoppeBox,
+  colbacktitle=CoppeBox,     % fundo do título
+  coltitle=white,
+  fonttitle=\bfseries\large,
+  title=#1,
+  boxrule=1pt,
+  arc=4mm,
+  left=1cm,
+  right=1cm,
+  top=1cm,
+  bottom=1cm,
+  floatplacement=hbtp,
+  float,center,
+  width=\dimexpr\textwidth-2cm\relax,
+  halign=center
+}
+
+
+\newcommand{\CoppeWay}[2]{
+\begin{CoppeBox}[#1]
+#2
+\end{CoppeBox}
+}

@@ -2,7 +2,7 @@
 % from KOMA
 \usepackage{scrhack} % evita warning do lst listings
 \usepackage{indentfirst}
-
+\usepackage{needspace}
 \usepackage{outlines}
 % usa mais interfaces de saída
 %  solution for the error “no room for a new \write” (This is a deep magic over TeX)
@@ -23,7 +23,7 @@
 \fi
 
 \usepackage[brazilian]{babel}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 
 % FONTES USADAS!!!
 \usepackage{lmodern}
@@ -63,7 +63,7 @@
 %
 %\usepackage{showframe}
 %\usepackage[a4paper]{geometry}
-\usepackage[a4paper,top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry}
+%\usepackage[a4paper,top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry}
 %Letra  de início de parágrafo
 %\usepackage{lettrine}
 
@@ -92,12 +92,22 @@
 % Não está gerando os índices
 \usepackage{imakeidx}
 \makeindex
+\renewcommand{\printindex}{%
+  \clearpage
+  \phantomsection
+  % Comente a linha abaixo se não quiser no sumário:
+  % \addcontentsline{toc}{chapter}{Índice Remissivo}
+  % Você pode usar \chapter{Índice Remissivo} aqui se quiser com número:
+  \markboth{Índice Remissivo}{Índice Remissivo}%
+  \input{\jobname.ind}%
+}
 
 % vamos usar o biblatex, recomendação
 %citestyle=alphabetic,bibstyle=authortitle
 \usepackage[ citestyle=authoryear,articlein=false,
 style=ext-authoryear-comp
 ,natbib=true]{biblatex}
+
 
 % fix "acedido" por algo mais razoável
 % fiz "e alli" por "et al."
@@ -272,7 +282,7 @@ style=ext-authoryear-comp
 \usepackage[normalem]{ulem}
 
 % Títulos mais legais
-\usepackage[Bjornstrup]{fncychap}
+%\usepackage[Bjornstrup]{fncychap}
 %\usepackage{titlesec}
 %\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
 
@@ -321,13 +331,35 @@ style=ext-authoryear-comp
 
 \usepackage{wrapfig}
 
-\usepackage{etoolbox} % SEM USO AINDA
+\usepackage{etoolbox} 
+\usepackage{pdfpages}
+\usepackage{setspace}
 
 % para poder usar url
 \usepackage{url,xurl}
 \usepackage[hidelinks]{hyperref}
 
+% lista de URLS
+\newwrite\urllistfile
+\immediate\openout\urllistfile=urllist.aux
 
+\let\oldurl\url
+\renewcommand{\url}[1]{\myurl{#1}}
 
+\newcommand{\myurl}[1]{%
+  \oldurl{#1}%
+  \begingroup
+    \edef\tempurl{#1}%
+    \immediate\write\urllistfile{\noexpand\urllistentry{\tempurl}}%
+  \endgroup
+}
 
+\newcommand{\urllistentry}[1]{\item \oldurl{#1}}
+
+\newcommand{\listofurls}{%
+  \immediate\closeout\urllistfile
+  \begin{itemize}
+    \input{urllist.aux}
+  \end{itemize}
+}
 

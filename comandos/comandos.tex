@@ -6,7 +6,7 @@
 
 \newcommand{\Excel}{Excel\texttrademark}
 \newcommand{\ExcelScale}{0.4}
-\newcommand{\furl}[1]{\footnote{\url{}}}
+\newcommand{\furl}[1]{\footnote{\url{#1}}}
 
 % can´t remember what it does
 \makeatletter
@@ -108,9 +108,3 @@ colframe=\gxibfcolor,colback=\gxibbcolor, sharp corners=uphill]%
         \protect#2
 \end{tcolorbox}}
 
-\newcommand{\gxatencao}[1]{
-    \begin{tcolorbox}[notitle,boxrule=0mm,colframe=blue!15,%
-        colback=blue!15,fonttitle=\bfseries,arc=0mm]%
-        \centering
-        \textbf{\protect#1}
-\end{tcolorbox}}

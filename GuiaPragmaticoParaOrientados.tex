@@ -1,16 +1,18 @@
-\documentclass[fontsize=12pt,open=any, a4paper,pagesize=auto,toc=listof,twoside,chapterprefix=false,appendixprefix=true]{scrbook}
-
+\documentclass[fontsize=12pt,open=any,DIV=12,  BCOR=0mm,  headings=normal,   a4paper,pagesize=auto,toc=listof,twoside=false,chapterprefix=false,appendixprefix=true]{scrbook}
 
 \input{comandos/pacotes.tex}
 \input{comandos/comandos.tex}
+\input{comandos/estilo}
+
+
 
 
 \addbibresource{bibs/bibguiadoorientado.bib}
 \addbibresource{bibs/refs.bib}
 
-% \usepackage{draftwatermark}
-% \SetWatermarkText{DRAFT}
-% \SetWatermarkScale{5}
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{5}
 
 
 \title{Guia Pragmático para a Pós-Graduação}
@@ -21,56 +23,78 @@
 
 \makeindex
 
-\begin{document}
 
+
+\begin{document}
+\includepdf[pages=1,pagecommand={\thispagestyle{empty}\null}]{capa2025.pdf}
+\include{Admin/licenca}
+\clearpage
 \maketitle
 
 
-\include{Admin/licenca}
+
 \include{Conteudo/citacao}
 
 
-
+\pagestyle{plain}
 \frontmatter
 \tableofcontents
 \listoffigures
 \listoftables
 
 \mainmatter
-
+\pagestyle{headings}
 \include{Conteudo/00_Este_Texto}
-\include{Conteudo/01_PrincipioFundamental}
+
+\part{É Sobre Pessoas}
 \include{Conteudo/02_Nos}
-\include{Conteudo/03_TemaDaTese}
 \include{Conteudo/04_SeuObjetivo}
-\include{Conteudo/06_PartesInteressadasNaTese}
+\include{Conteudo/01_PrincipioFundamental}
 \include{Conteudo/07_TiposDeAluno}
-\include{Conteudo/08_HabitosPraticas}
 \include{Conteudo/09_Orientador}
+\include{Conteudo/06_PartesInteressadasNaTese}
+\include{Conteudo/14_AmbienteUniversitario}
+\part{Como Fazer}
+\include{Conteudo/03_TemaDaTese}
+\include{Conteudo/20_Prazo}
+\include{Conteudo/08_HabitosPraticas}
 \include{Conteudo/10_Dedicacao}
-\include{Conteudo/11_OtimoBom}
 \include{Conteudo/12_Publicando}
 \include{Conteudo/13_MetodologiaCientifica}
-\include{Conteudo/14_AmbienteUniversitario}
 \include{Conteudo/15_ExameQualificacao}
-~%\include{Conteudo/17_HardwareSoftware}
-\include{Conteudo/18_TrabalhandoComigo}
+%\include{Conteudo/17_HardwareSoftware}
 \include{Conteudo/19_TextoDaTese}
-\include{Conteudo/20_Prazo}
-\include{Conteudo/21_CadernoDePesquisa}
-\include{Conteudo/22_AlgunsSites}
+\part{Trabalhando Comigo}
+\include{Conteudo/25PraticasdaCoppe}
+\include{Conteudo/18_TrabalhandoComigo}
+\part{Conclusão}
+\include{Conteudo/11_OtimoBom}
+\chapter{Bibliografia}
+\printbibliography[heading=none]  % Suprime o título automático
+%\printindex
+\part{Apêndices}
+\renewcommand{\chapapp}{Apêndice}
+\renewcommand{\thechapter}{\Alph{chapter}}
+\setcounter{chapter}{0}
+\include{Conteudo/checklist defesa}
+\include{Conteudo/checklistsCOPPE}
+\chapter{Lista de URLs citadas}
+  \immediate\closeout\urllistfile
+\part{Anexos}
+\renewcommand{\chapapp}{Anexo}
+\renewcommand{\thechapter}{\Alph{chapter}}
+\setcounter{chapter}{0}
 \include{Conteudo/23_Piadas}
 \include{Conteudo/24_MensagemGarcia}
 
+\listofurls
 
 
-\printindex
 
-\printbibliography
 %\bibliography{citados.bib}
-\appendix
 
 
-\backmatter
+
+
 
 \end{document}
